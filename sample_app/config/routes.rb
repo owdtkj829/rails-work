@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get 'top' => 'homes#top'
 
   post 'todolists' => 'todolists#create'
+
+  get'todolist'=>'todolist#index'
 end
