@@ -607,3 +607,48 @@ Ubuntu 18.04.3 LTS ubuntu-bionic ttyS0
 
 ubuntu-bionic login: [   20.466831] cloud-init[1190]: Cloud-init v. 19.4-33-gbb4131a2-0ubuntu1~18.04.1 running 'modules:final' at Sun, 02 Feb 2020 04:35:45 +0000. Up 20.21 seconds.
 [   20.471009] cloud-init[1190]: Cloud-init v. 19.4-33-gbb4131a2-0ubuntu1~18.04.1 finished at Sun, 02 Feb 2020 04:35:45 +0000. Datasource DataSourceNoCloud [seed=/dev/sdb][dsmode=net].  Up 20.45 seconds
+[12001.384937] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[12001.384937]   Tx Queue             <0>
+[12001.384937]   TDH                  <b7>
+[12001.384937]   TDT                  <b9>
+[12001.384937]   next_to_use          <b9>
+[12001.384937]   next_to_clean        <b7>
+[12001.384937] buffer_info[next_to_clean]
+[12001.384937]   time_stamp           <1002ca1c0>
+[12001.384937]   next_to_watch        <b8>
+[12001.384937]   jiffies              <1002ca4b0>
+[12001.384937]   next_to_watch.status <0>
+[12003.400727] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[12003.400727]   Tx Queue             <0>
+[12003.400727]   TDH                  <b7>
+[12003.400727]   TDT                  <b9>
+[12003.400727]   next_to_use          <b9>
+[12003.400727]   next_to_clean        <b7>
+[12003.400727] buffer_info[next_to_clean]
+[12003.400727]   time_stamp           <1002ca1c0>
+[12003.400727]   next_to_watch        <b8>
+[12003.400727]   jiffies              <1002ca6a8>
+[12003.400727]   next_to_watch.status <0>
+[12005.417056] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[12005.417056]   Tx Queue             <0>
+[12005.417056]   TDH                  <b7>
+[12005.417056]   TDT                  <b9>
+[12005.417056]   next_to_use          <b9>
+[12005.417056]   next_to_clean        <b7>
+[12005.417056] buffer_info[next_to_clean]
+[12005.417056]   time_stamp           <1002ca1c0>
+[12005.417056]   next_to_watch        <b8>
+[12005.417056]   jiffies              <1002ca8a0>
+[12005.417056]   next_to_watch.status <0>
+[12007.432304] e1000 0000:00:03.0 enp0s3: Detected Tx Unit Hang
+[12007.432304]   Tx Queue             <0>
+[12007.432304]   TDH                  <b7>
+[12007.432304]   TDT                  <b9>
+[12007.432304]   next_to_use          <b9>
+[12007.432304]   next_to_clean        <b7>
+[12007.432304] buffer_info[next_to_clean]
+[12007.432304]   time_stamp           <1002ca1c0>
+[12007.432304]   next_to_watch        <b8>
+[12007.432304]   jiffies              <1002caa98>
+[12007.432304]   next_to_watch.status <0>
+[12008.362122] e1000 0000:00:03.0 enp0s3: Reset adapter
