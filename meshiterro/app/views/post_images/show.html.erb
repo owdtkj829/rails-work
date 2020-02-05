@@ -19,7 +19,7 @@
            <li>
              <i class="fa fa-calendar"></i><%= @post_image.created_at.strftime('%Y/%m/%d') %>
            </li>
-           
+
            <% if @post_image.favorited_by?(current_user) %>
   <li>
     <%= link_to post_image_favorites_path(@post_image), method: :delete do %>
