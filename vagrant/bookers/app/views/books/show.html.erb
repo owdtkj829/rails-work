@@ -1,0 +1,99 @@
+<body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container">
+            <span style="color:white;">Bookers</span>
+            <nav>
+                <ul class="nav navbar-nav navbar-right">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true">
+                        <%= link_to'Home',user_path(@user.id)%>
+                    </span>
+                    <span class="glyphicon glyphicon-user" aria-hidden="true">
+                        <%= link_to'Users',user_path%>
+                    </span>
+                    <span class="glyphicon glyphicon-book" aria-hidden="true">
+                        <%= link_to'Books',books_path%>
+                    </span>
+                    <span class="glyphicon glyphicon-log-out" aria-hidden="true">
+                        <%= link_to 'Logout',destroy_user_session_path, method: :delete %>
+                    </span>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <br><br><br>
+    <div class="body">
+        <div class="container">
+            <p id="notice"></p>
+            <div class="row">
+                <div class="col-xs-3">
+                    <h2>User info</h2>
+                    <table class="table">
+                        <tbody>
+                            <%= form_for(@user) do |f| %>
+                            <th></th>
+                            <th><tr>
+                                
+                            </tr></th>
+                            <tr>
+                                <th>name</th>
+                                <th>
+                                    <%= f.text_field :title %>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>introduction</th>
+                                <th>
+                                    <%= f.text_area :body %>
+                                </th>
+                            </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <% if @user.id == current_user.id %>
+                        <%= link_to'edit',edit_user_path, class: 'btn btn-primary col-xs-12'%>
+                        <% end %>
+                    </div>
+                    <h2>New book</h2>
+                    <form>
+                        <div>
+                            <%= form_for(@book) do |f| %>
+                            <h4>Title</h4>
+                            <%= f.text_field :title %>
+                            <h4>Opinion</h4>
+                            <%= f.text_area :body %>
+                            <%= f.submit 'Create Book' %>
+                            <% end %>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-xs-9">
+                    <h2>Books</h2>
+                    <table class="table table-hover table-inverse">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Title</th>
+                                <th>Opinion</th>
+                                <th colspan="3"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3 col-xs-offset-9">
+                    <p>CopyRight Infratop.inc</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

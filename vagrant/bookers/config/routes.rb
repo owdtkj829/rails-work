@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root :to=>'top#index'
   devise_for :users
+  root :to=>'top#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :books, only: [:new, :create, :index, :show]
-  resources :users, only: [:show]
+  resources :books
+  resources :users
+  get 'home/about'=>'top#show'
 end
