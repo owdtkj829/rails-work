@@ -1,0 +1,78 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <span style="color:white;">Bookers</span>
+        <nav>
+            <ul class="nav navbar-nav navbar-right">
+                <% if user_signed_in? %>
+                <span class="glyphicon glyphicon-home" aria-hidden="true">
+                    <%= link_to'Home',user_path(current_user.id)%>
+                </span>
+                <span class="glyphicon glyphicon-user" aria-hidden="true">
+                    <%= link_to'Users',users_path%>
+                </span>
+                <span class="glyphicon glyphicon-book" aria-hidden="true">
+                    <%= link_to'Books',books_path%>
+                </span>
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true">
+                    <%= link_to 'logout',destroy_user_session_path, method: :delete %>
+                </span>
+                <% else %>
+                <span class="glyphicon glyphicon-home">
+                    <%= link_to'Home',user_path(current_user.id)%>
+                </span>
+                <span class="glyphicon glyphicon-link about" aria-hidden="true">
+                    <%= link_to'About',home_about_path %>
+                </span>
+                <span class="glyphicon glyphicon-edit sign_up" aria-hidden="true">
+                    <%= link_to'sign up',new_user_registration_path %>
+                </span>
+                <span class="glyphicon glyphicon-log-in sign_in" aria-hidden="true">
+                    <%= link_to'login',new_user_session_path %>
+                </span>
+                <%end%>
+            </ul>
+        </nav>
+    </div>
+</header>
+<br><br><br>
+<% if @book.errors.any? %>
+   <p>error</p>
+<% end %>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h1>Editing Book</h1>
+                <%= form_for(@book) do |f| %>
+                <div class="field row">
+                    <label for="book_title">Title</label><br>
+                    <div class="row">
+                        <%= f.text_field :title, autofocus: true ,class: 'col-xs-10'%>
+                    </div>
+                    <label for="book_opinion">Opinion</label><br>
+                    <div class="row">
+                        <%= f.text_area :body, autofocus: true,class: 'col-xs-10'%>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <%= f.submit "Update Book",class: 'btn btn-primary col-xs-10'%>
+                    </div>
+                    <% end %>
+                    <br>
+                    <%= link_to'Show',book_path%><a>|</a>
+                    <%= link_to'Back',books_path%>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-3 col-xs-offset-9">
+                        <p>CopyRight Infratop.inc</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
