@@ -5,11 +5,34 @@
         </nav>
         <nav>
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="glyphicon glyphicon-home home" href="/"> Home</a></li>
-                <li><a class="glyphicon glyphicon-link about" href="/home/about"> About</a></li>
-                <li><a class="glyphicon glyphicon-edit sign_up" href="/users/sign_up"> sign up</a></li>
-                <li><a class="glyphicon glyphicon-log-in sign_in" href="/users/sign_in"> login</a></li>
-            </ul>
+                    <% if user_signed_in? %>
+                        <span class="glyphicon glyphicon-home" aria-hidden="true">
+                            <%= link_to'Home',root_path%>
+                        </span>
+                        <span class="glyphicon glyphicon-user" aria-hidden="true">
+                            <%= link_to'Users',users_path%>
+                        </span>
+                        <span class="glyphicon glyphicon-book" aria-hidden="true">
+                            <%= link_to'Books',books_path%>
+                        </span>
+                        <span class="glyphicon glyphicon-log-out" aria-hidden="true">
+                            <%= link_to 'logout',destroy_user_session_path, method: :delete %>
+                        </span>
+                    <% else %>
+                        <span class="glyphicon glyphicon-home">
+                            <%= link_to'Home',root_path%>
+                        </span>
+                        <span class="glyphicon glyphicon-link about" aria-hidden="true">
+                            <%= link_to'About',home_about_path %>
+                        </span>
+                        <span class="glyphicon glyphicon-edit sign_up" aria-hidden="true">
+                            <%= link_to'sign up',new_user_registration_path %>
+                        </span>
+                        <span class="glyphicon glyphicon-log-in sign_in" aria-hidden="true">
+                            <%= link_to'login',new_user_session_path %>
+                        </span>
+                    <%end%>
+                </ul>
         </nav>
     </div>
 </header>
