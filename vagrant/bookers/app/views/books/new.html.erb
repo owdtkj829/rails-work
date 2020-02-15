@@ -5,31 +5,31 @@
             <nav>
                 <ul class="nav navbar-nav navbar-right">
                     <% if user_signed_in? %>
-                        <span class="glyphicon glyphicon-home" aria-hidden="true">
-                            <%= link_to'Home',user_path(current_user.id)%>
-                        </span>
-                        <span class="glyphicon glyphicon-user" aria-hidden="true">
-                            <%= link_to'Users',users_path%>
-                        </span>
-                        <span class="glyphicon glyphicon-book" aria-hidden="true">
-                            <%= link_to'Books',books_path%>
-                        </span>
-                        <span class="glyphicon glyphicon-log-out" aria-hidden="true">
-                            <%= link_to 'logout',destroy_user_session_path, method: :delete %>
-                        </span>
+                    <span class="glyphicon glyphicon-home" aria-hidden="true">
+                        <%= link_to'Home',user_path(current_user.id)%>
+                    </span>
+                    <span class="glyphicon glyphicon-user" aria-hidden="true">
+                        <%= link_to'Users',users_path%>
+                    </span>
+                    <span class="glyphicon glyphicon-book" aria-hidden="true">
+                        <%= link_to'Books',books_path%>
+                    </span>
+                    <span class="glyphicon glyphicon-log-out" aria-hidden="true">
+                        <%= link_to 'logout',destroy_user_session_path, method: :delete %>
+                    </span>
                     <% else %>
-                        <span class="glyphicon glyphicon-home">
-                            <%= link_to'Home',user_path(current_user.id)%>
-                        </span>
-                        <span class="glyphicon glyphicon-link about" aria-hidden="true">
-                            <%= link_to'About',home_about_path %>
-                        </span>
-                        <span class="glyphicon glyphicon-edit sign_up" aria-hidden="true">
-                            <%= link_to'sign up',new_user_registration_path %>
-                        </span>
-                        <span class="glyphicon glyphicon-log-in sign_in" aria-hidden="true">
-                            <%= link_to'login',new_user_session_path %>
-                        </span>
+                    <span class="glyphicon glyphicon-home">
+                        <%= link_to'Home',user_path(current_user.id)%>
+                    </span>
+                    <span class="glyphicon glyphicon-link about" aria-hidden="true">
+                        <%= link_to'About',home_about_path %>
+                    </span>
+                    <span class="glyphicon glyphicon-edit sign_up" aria-hidden="true">
+                        <%= link_to'sign up',new_user_registration_path %>
+                    </span>
+                    <span class="glyphicon glyphicon-log-in sign_in" aria-hidden="true">
+                        <%= link_to'login',new_user_session_path %>
+                    </span>
                     <%end%>
                 </ul>
             </nav>
@@ -69,7 +69,13 @@
                     </table>
                     <div class="row">
                         <% if @user.id == current_user.id %>
-                        <%= link_to'edit',edit_user_path, class: 'btn btn-primary col-xs-12'%>
+                        <div class="row">
+                            <%= link_to'edit',edit_user_path(current_user.id), class: 'btn btn-primary col-xs-12'%>
+                        </div>
+                        <%else%>
+                        <div class="row">
+                            <%= link_to'edit',user_path(current_user.id), class: 'btn btn-primary col-xs-12'%>
+                        </div>
                         <% end %>
                     </div>
                     <div class="row">

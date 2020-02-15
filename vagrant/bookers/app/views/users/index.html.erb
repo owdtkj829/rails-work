@@ -64,11 +64,15 @@
                             <% end %>
                         </tbody>
                     </table>
-                    <div class="row">
-                        <% if @user.id == current_user.id %>
-                        <%= link_to'edit',edit_user_path(@user), class: 'btn btn-primary col-xs-12'%>
+                    <% if @user.id == current_user.id %>
+                            <div class="row">
+                                <%= link_to'edit',edit_user_path(current_user.id), class: 'btn btn-primary col-xs-12'%>
+                            </div>
+                        <%else%>
+                            <div class="row">
+                                <%= link_to'edit',user_path(current_user.id), class: 'btn btn-primary col-xs-12'%>
+                            </div>
                         <% end %>
-                    </div>
                     <div class="row">
                         <h2>New book</h2>
                         <%= form_for(@book) do |f| %>
